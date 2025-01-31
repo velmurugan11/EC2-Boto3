@@ -42,15 +42,6 @@ def list_ec2_instances():
                 print(f"  Launch Time: {launch_time}")
                 print(f"  Running Time: {time_running_minutes:.2f} minutes")
                 
-
-                # Check the instances is running more the a specific time.
-                if time_running_minutes > 10 and state == 'running' or 'stopped':
-                    print(f"  Terminating instance {instance_id}...")
-                    ec2.terminate_instances(InstanceIds=[instance_id])
-                    print(f"  Instance {instance_id} is terminated.")
-                    # print(f"  Shutting down instance {instance_id}...")
-                    # ec2.stop_instances(InstanceIds=[instance_id])
-                    # print(f"  Instance {instance_id} is shutting down.")
                 
                 print("-" * 30)
 
